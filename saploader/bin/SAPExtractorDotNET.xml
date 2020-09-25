@@ -1,0 +1,147 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+SAPExtractorDotNET
+</name>
+</assembly>
+<members>
+<member name="T:My.Resources.Resources">
+<summary>
+  ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
+</summary>
+</member>
+<member name="P:My.Resources.Resources.ResourceManager">
+<summary>
+  このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
+</summary>
+</member>
+<member name="P:My.Resources.Resources.Culture">
+<summary>
+  厳密に型指定されたこのリソース クラスを使用して、すべての検索リソースに対し、
+  現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
+</summary>
+</member>
+<member name="T:SAPExtractorDotNET.SAPConnector">
+ <summary>
+ Create Connection to SAP.<br/>
+ implements Serializable to store in session.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:SAPExtractorDotNET.SAPConnector.Destination">
+ <summary>destination name defined in web.config/app.config</summary>
+</member>
+<member name="P:SAPExtractorDotNET.SAPConnector.IsSilent">
+ <summary>is silent Login or not (silent mean user/password is already defined by destination)</summary>
+</member>
+<member name="M:SAPExtractorDotNET.SAPConnector.Login">
+ <summary>
+ Create Connection only by RFC definition in web.config/app.config
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:SAPExtractorDotNET.SAPFieldItem">
+ <summary>
+ Select parameter to execute query
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:SAPExtractorDotNET.SAPFieldItem.FieldId">
+ <summary>Unique id for field</summary>
+</member>
+<member name="P:SAPExtractorDotNET.SAPFieldItem.FieldStructure">
+ <summary>Structure type of field</summary>
+</member>
+<member name="P:SAPExtractorDotNET.SAPFieldItem.IsRangeField">
+ <summary>is field for range selection</summary>
+</member>
+<member name="P:SAPExtractorDotNET.SAPFieldItem.isIgnore">
+ <summary>is system field or not</summary>
+</member>
+<member name="P:SAPExtractorDotNET.SAPFieldItem.FieldText">
+ <summary>Text for field</summary>
+</member>
+<member name="P:SAPExtractorDotNET.SAPFieldItem.Order">
+ <summary>Order no of field</summary>
+</member>
+<member name="P:SAPExtractorDotNET.SAPFieldItem.FieldType">
+ <summary>Field type</summary>
+</member>
+<member name="P:SAPExtractorDotNET.SAPFieldItem.FieldSize">
+ <summary>Field size</summary>
+</member>
+<member name="P:SAPExtractorDotNET.SAPFieldItem.FieldGroup">
+ <summary>the group of field</summary>
+</member>
+<member name="P:SAPExtractorDotNET.SAPFieldItem.isKey">
+ <summary>is key field or not</summary>
+</member>
+<member name="T:SAPExtractorDotNET.SAPQueryExtractor">
+ <summary>
+ Extract data from SAP Query
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:SAPExtractorDotNET.SAPQueryExtractor.Find(SAP.Middleware.Connector.RfcDestination,System.String,System.String)">
+ <summary>
+ Find SAP Query
+ </summary>
+ <param name="destination"></param>
+ <param name="queryName"></param>
+ <param name="userGroup"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:SAPExtractorDotNET.SAPQueryExtractor.Invoke(SAP.Middleware.Connector.RfcDestination,System.Collections.Generic.List{SAPExtractorDotNET.SAPFieldItem})">
+ <summary>
+ Extract data from SAP Query
+ </summary>
+ <param name="destination"></param>
+ <param name="fields"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:SAPExtractorDotNET.LineData">
+ <summary>
+ to read rfc returned string
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:SAPExtractorDotNET.SAPTableExtractor">
+ <summary>
+ Extract data from SAP Table
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:SAPExtractorDotNET.SAPTableExtractor.Find(SAP.Middleware.Connector.RfcDestination,System.String)">
+ <summary>
+ Find Table
+ </summary>
+ <param name="destination"></param>
+ <param name="tableName"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:SAPExtractorDotNET.SAPTableExtractor.GetColumnFields(SAP.Middleware.Connector.RfcDestination)">
+ <summary>
+ Get table's columns definition. 
+ </summary>
+ <param name="destination"></param>
+ <returns></returns>
+ <remarks>Column definitions are taken from DD03M</remarks>
+</member>
+<member name="M:SAPExtractorDotNET.SAPTableExtractor.Invoke(SAP.Middleware.Connector.RfcDestination,System.Collections.Generic.List{SAPExtractorDotNET.SAPFieldItem},System.Collections.Generic.List{SAPExtractorDotNET.SAPFieldItem})">
+ <summary>
+ Get SAP Table data.<br/>
+ If condition is Nothing, then get all columns of table.
+ </summary>
+ <param name="destination"></param>
+ <param name="fields"></param>
+ <param name="options"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+</members>
+</doc>
